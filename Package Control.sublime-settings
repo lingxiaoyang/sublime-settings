@@ -8,6 +8,9 @@
 		"Emacs Pro Essentials",
 		"Package Control",
 		"SingleTrailingNewLine",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"SublimeLinter-flake8",
 		"Vue Syntax Highlight"
 	]
 }

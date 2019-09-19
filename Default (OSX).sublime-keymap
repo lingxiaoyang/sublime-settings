@@ -1,0 +1,3 @@
+[
+    {"keys": ["ctrl+x", "ctrl+c"], "command": "close_window"}
+]
