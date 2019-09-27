@@ -11,6 +11,7 @@
 		"SublimeLinter",
 		"SublimeLinter-eslint",
 		"SublimeLinter-flake8",
+		"SublimeLinter-stylelint",
 		"Vue Syntax Highlight"
 	]
 }
