@@ -41,7 +41,7 @@ Steps to follow:
    /cygdrive/c/Program\ Files/Sublime\ Text\ 3/subl.exe -n "${new_args[@]}"
    ```
    
-4. Set up command-line blocking editor. Add to `~/.bashrc` or `~/.bash_profile`:
+4. Set up default editor: add following line to `~/.bashrc` or `~/.bash_profile`:
 
    ```
    export EDITOR="emacs -w"
