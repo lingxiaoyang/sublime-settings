@@ -16,19 +16,35 @@ Steps to follow:
 
 3. Create fake `emacs` command:
 
-   On mac:
+   On mac: create `/usr/local/bin/emacs` as follows and set executable.
+   
+   ```bash
+   #!/bin/bash
+   /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n "$@"
+   ```
    
    On cygwin: create `/usr/local/bin/emacs` as follows and set executable.
    
    ```bash
    #!/bin/bash
-   /cygdrive/c/Program\ Files/Sublime\ Text\ 3/subl.exe -n -w $(cygpath --windows $1)
+   new_args=()
+
+   for ARG in "$@"; do
+     if [[ $ARG == -* ]]; then
+       NEW_ARG="$ARG"
+     else
+       NEW_ARG=$(cygpath --windows "$ARG")
+     fi
+     new_args+=("$NEW_ARG")
+   done
+
+   /cygdrive/c/Program\ Files/Sublime\ Text\ 3/subl.exe -n "${new_args[@]}"
    ```
    
-4. Add to `~/.bashrc` or `~/.bash_profile`:
+4. Set up command-line blocking editor. Add to `~/.bashrc` or `~/.bash_profile`:
 
    ```
-   export EDITOR="emcacs"
+   export EDITOR="emacs -w"
    ```
    
 Welcome to SublimEmacs!
