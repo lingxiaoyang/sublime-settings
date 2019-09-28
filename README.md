@@ -1,9 +1,30 @@
-On mac:
+# Sublime Text Settings for Converted Emacs Users
 
-`git clone git@github.com:lingxiaoyang/sublime-settings.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User`
+Steps to follow:
 
-On cygwin:
+1. Clone the repo:
 
-`git clone git@github.com:lingxiaoyang/sublime-settings.git /cygdrive/c/Users/$USER/AppData/Roaming/Sublime\ Text\ 3/Packages/User`
+   On mac: `git clone git@github.com:lingxiaoyang/sublime-settings.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User`
 
-After cloning, install Package Control and the packages will pop in automatically.
+   On cygwin: `git clone git@github.com:lingxiaoyang/sublime-settings.git /cygdrive/c/Users/$USER/AppData/Roaming/Sublime\ Text\ 3/Packages/User`
+
+2. Install Package Control. The packages will pop in automatically.
+
+3. Create fake `emacs` command:
+
+   On mac:
+   
+   On cygwin: create `/usr/local/bin/emacs` as follows and set executable.
+   
+   ```bash
+   #!/bin/bash
+   /cygdrive/c/Program\ Files/Sublime\ Text\ 3/subl.exe -n -w $(cygpath --windows $1)
+   ```
+   
+4. Add to `~/.bashrc` or `~/.bash_profile`:
+
+   ```
+   export EDITOR="emcacs"
+   ```
+   
+Welcome to SublimEmacs!
