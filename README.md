@@ -4,11 +4,15 @@ Steps to follow:
 
 1. Clone the repo:
 
-   On mac:
+   On Mac:
    
    `git clone git@github.com:lingxiaoyang/sublimemacs-settings.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User`
 
-   On cygwin: 
+   On Ubuntu:
+
+   `git clone git@github.com:lingxiaoyang/sublimemacs-settings.git ~/.config/sublime-text-3/Packages/User`
+
+   On Cygwin: 
    
    `git clone git@github.com:lingxiaoyang/sublimemacs-settings.git /cygdrive/c/Users/$USER/AppData/Roaming/Sublime\ Text\ 3/Packages/User`
 
@@ -16,14 +20,21 @@ Steps to follow:
 
 3. Create fake `emacs` command:
 
-   On mac: create `/usr/local/bin/emacs` as follows and set executable.
+   On Mac: create `/usr/local/bin/emacs` as follows and set executable.
    
    ```bash
    #!/bin/bash
    /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n "$@"
    ```
    
-   On cygwin: create `/usr/local/bin/emacs` as follows and set executable.
+   On Ubuntu: create `/usr/local/bin/emacs` as follows and set executable.
+   
+   ```bash
+   #!/bin/bash
+   /usr/bin/subl -n "$@"
+   ```
+   
+   On Cygwin: create `/usr/local/bin/emacs` as follows and set executable.
    
    ```bash
    #!/bin/bash
